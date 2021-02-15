@@ -2,6 +2,7 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var input = document.getElementById("input");
+var escala = document.getElementById("scale");
 //Establecemos el tamaño del canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -35,13 +36,13 @@ function draw(){
     let izq = parsear("(-x[j])")
     //Dibujamos la parte derecha de la funcion
     for(let j=0;j<n;j++){
-        ctx.lineTo(midScreenW + j/2,midScreenH-eval(der));
-        ctx.moveTo(midScreenW + j/2,midScreenH-eval(der));
+        ctx.lineTo(midScreenW + j*escala.value,midScreenH-eval(der)*escala.value);
+        ctx.moveTo(midScreenW + j*escala.value,midScreenH-eval(der)*escala.value);
     }
     //Dibujamos la parte izquierda de la funcion
     for(let j=0;j<n;j++){
-        ctx.lineTo(midScreenW - j/2,midScreenH-eval(izq));
-        ctx.moveTo(midScreenW - j/2,midScreenH-eval(izq));
+        ctx.lineTo(midScreenW - j*escala.value,midScreenH-eval(izq)*escala.value);
+        ctx.moveTo(midScreenW - j*escala.value,midScreenH-eval(izq)*escala.value);
     }
     ctx.stroke();
 

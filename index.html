@@ -5,9 +5,10 @@
 </head>
 <body>
     <h1>Graficador</h1>
-    <input id="input" placeholder="y=" type="text" value="x**3+3*x">
+    <p>y=<input id="input" placeholder="x**3+3*x" type="text"></p>
+    <p>Escala:<input id="scale" style="max-width: 3%;" value="1" type="text"></p>
     <button onclick="draw()">Graficar</button>
     <button onclick="reset()">Borrar</button>
     <canvas id="canvas"></canvas>
-    <script src="graph.js"></script>
+    <script src="plotter.js"></script>
 </body>
